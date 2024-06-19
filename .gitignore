@@ -1,0 +1,59 @@
+# Visual Studio / Visual Studio Code specific files
+**/.vs/
+**/bin/
+**/obj/
+
+# Temporary generated files
+**/.browserlink/
+**/wwwroot/.cache/
+
+# User secrets (development only)
+**/appsettings.Development.json
+
+# Any other project specific temporary or generated files
+
+# Testing and debugging files
+**/TestResults/
+**/coverage/
+
+# NuGet packages (managed by NuGet)
+**/packages/**
+
+# Local development server settings
+**/launchSettings.json
+
+# IDE user settings
+**/.vscode/settings.json
+**/.vscode/tasks.json
+**/.vscode/launch.json
+
+# Build artifacts (handled by CI/CD)
+**/artifacts/**
+
+# IDE specific cache directories
+**/.idea/
+**/node_modules/
+
+# OS specific temporary files
+*.sln
+*.suo
+*.user
+*.ds_store
+
+# Build output folder (handled by build process)
+**/bin/Release/
+**/bin/Debug/
+
+# Logs (often managed separately)
+**/logs/
+
+# Editor temporary files
+*.tmp
+*.swp
+
+# Miscellaneous temporary files
+*~
+#*.bak
+
+# Read me for ignored files
+README.md  # Keep or adjust based on your preference
