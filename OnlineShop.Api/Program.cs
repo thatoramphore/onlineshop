@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using OnlineShop.Api.Repositories.Contracts;
 using OnlineShop.Api.Entities;
 using OnlineShop.Api.Repositories;
+using Microsoft.Net.Http.Headers;
 
 var builder = WebApplication.CreateBuilder(args);
 //string connectionString = ConnectionStrings;
@@ -29,6 +30,12 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+
+app.UseCors(policy => 
+    policy.WithOrigins("https://localhost:7210", "http://localhost:7210")
+    .AllowAnyMethod()
+    .WithHeaders(HeaderNames.ContentType)
+);
 
 app.UseHttpsRedirection();
 
