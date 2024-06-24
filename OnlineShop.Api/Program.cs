@@ -2,6 +2,9 @@ using OnlineShop.Api.Data;
 using Microsoft.EntityFrameworkCore.SqlServer;
 using Microsoft.SqlServer;
 using Microsoft.EntityFrameworkCore;
+using OnlineShop.Api.Repositories.Contracts;
+using OnlineShop.Api.Entities;
+using OnlineShop.Api.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 //string connectionString = ConnectionStrings;
@@ -13,9 +16,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 //builder.Services.AddDbContext<OnlineShopDbContext>(options => options.UseSqlServer(connectionString));
-builder.Services.AddDbContext<OnlineShopDbContext>(options => options.UseSqlServer(
+builder.Services.AddDbContextPool<OnlineShopDbContext>(options => options.UseSqlServer(
 builder.Configuration.GetConnectionString("OnlineShopConnection")
 ));
+builder.Services.AddScoped<IProductRepository, ProductRepository>();
 
 var app = builder.Build();
 
